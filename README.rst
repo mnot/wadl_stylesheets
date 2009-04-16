@@ -4,7 +4,7 @@ support for HTTP,  isn't well-positioned to take advantage of HTTP's
 features, nor to encourage good practice.
 
 There are a lot of proposals in this space, but 
-<a href="http://wadl.dev.java.net/">WADL</a> is the most mature
+`WADL <http://wadl.dev.java.net/>`__ is the most mature
 and capable. More thoughts 
 `here <http://www.mnot.net/blog/2005/05/18/WADL>`__.
 

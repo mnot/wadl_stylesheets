@@ -1,0 +1,24 @@
+<p>CORBA has IDL; SOAP has WSDL. Developers often ask for similar 
+capabilites for HTTP-based, "RESTful" services. While WSDL does claim
+support for HTTP,  isn't well-positioned
+to take advantage of HTTP's features, nor to encourage good practice.</p>
+
+<p>There are a lot of proposals in this space, but 
+<a href="http://wadl.dev.java.net/">WADL</a> is the most mature
+and capable. More thoughts 
+<a href="http://www.mnot.net/blog/2005/05/18/WADL">here</a>.</p>
+
+<p><a href="wadl_documentation.xsl">wadl_documentation.xsl</a> is
+an XSL stylesheet that transforms WADL into human-readable documentation, 
+one of many <a href="http://www.mnot.net/blog/2004/06/14/desc_usecases">uses 
+of a Web description format</a>.</p>
+
+<p>Note that <a href="http://www.exslt.org/exsl/functions/node-set/" class="offsite">EXSLT node-set</a> support is required,
+so this stylesheet will not work natively in some browsers. Try 
+<a href="http://saxon.sourceforge.net/" class="offsite">Saxon</a> or <a href="http://xmlsoft.org/XSLT/xsltproc.html" class="offsite">xsltproc</a>.</p>
+
+<p><a href="uri.xsd">uri.xsd</a> is a library of XML type restrictions 
+that correspond to different components of a URI, so they can be accurately described (e.g., in a WADL <tt>param</tt> element).</p>
+
+<p>Feedback is preferred on the 
+<a href="http://lists.w3.org/Archives/Public/public-web-http-desc/">W3C http description list</a>.</p>

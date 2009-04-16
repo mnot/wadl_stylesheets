@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://purl.org/NET/uri-xsd"
+>
+
+<!--
+    uri.xsd (2006-09-01)
+    
+    XSD Simple Types for URIs
+    
+    Copyright (c) 2006 Yahoo! Inc.
+    
+    This work is licensed under the Creative Commons Attribution-ShareAlike 2.5 
+    License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-sa/2.5/ 
+    or send a letter to 
+    Creative Commons
+    543 Howard Street, 5th Floor
+    San Francisco, California, 94105, USA
+-->
+    
+<xs:annotation>
+    <xs:documentation>
+        This is a set of XML Schema simple types corresponding to
+        various useful parts of URIs, so that their syntax can be
+        accurately described.
+        
+        Note that xs:pattern only allows "simple" regex, so it's not
+        possible to accurately constrain percent-escaped characters.
+        They are, however, allowed by these types.
+        
+        All rules were derived from RFC 3986's ABNF.
+    </xs:documentation>
+</xs:annotation>
+
+<xs:simpleType name="path-segment" id="path-segment">
+    <xs:annotation>
+        <xs:documentation>
+            A URI path segment; corresponds to the RFC3986 "segment" rule. 
+            E.g., "http://example.com/{path-segment}/".
+            Note that an empty segment is acceptable.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$&amp;'\(\)\*\+,;=:@%]*"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="matrix-name" id="matrix-name">
+    <xs:annotation>
+        <xs:documentation>
+            A matrix URI argument name.
+            E.g., "http://example.com/people;{matrix-name}=bob".
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$&amp;'\(\)\*\+,:@%]+"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+    
+<xs:simpleType name="matrix-arg" id="matrix-arg">
+    <xs:annotation>
+        <xs:documentation>
+            A matrix URI argument value.
+            E.g., "http://example.com/people;name={matrix-value}".
+            Note that an empty value is acceptable.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$&amp;'\(\)\*\+,=:@%]*"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="query-string" id="query-string">
+    <xs:annotation>
+        <xs:documentation>
+            A URI Query string; corresponds to the RFC3986 "query" rule. 
+            E.g., "http://example.com/where?{query-string}". 
+            Note that an empty query is acceptable.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$&amp;'\(\)\*\+,;=:@/\?%]*"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="query-name" id="query-name">
+    <xs:annotation>
+        <xs:documentation>
+            A control name to be encoded, as specified in HTML 4.01.
+            E.g., "http://example.com/where?{query-name}=there".
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$'\(\)\*\+,;:@/\?%]+"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="query-arg" id="query-arg">
+    <xs:annotation>
+        <xs:documentation>
+            A control value to be encoded, as specified in HTML 4.01.
+            E.g., "http://example.com/where?here={query-arg}". 
+            Note that an empty value is acceptable.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Za-z0-9\-._~!$'\(\)\*\+,;=:@/\?%]*"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+        
+</xs:schema>

@@ -36,7 +36,7 @@
 <!-- xsltproc -o application-links.xhtml - -stringparam page_title 'Application Links' wadl-links.xsl application.wadl -->
 <!-- (Remove the space between '- -stringparam' dashes, which would terminate this XML comment) -->
 
-<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:wadl="http://research.sun.com/wadl/2006/10" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xsl:output indent="yes" media-type="application/xhtml+xml" method="xml" omit-xml-declaration="no" doctype-system="about:legacy-compat" />
 
   <xsl:param name="page_title" select="'Application Links'" />

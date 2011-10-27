@@ -12,6 +12,8 @@ wadl_documentation.xsl is an XSL stylesheet that transforms WADL into human-read
 documentation, one of many 
 `uses of a Web description format <http://www.mnot.net/blog/2004/06/14/desc_usecases>`__.
 
+See an example of its output at <http://mnot.github.com/wadl_stylesheets/>.
+
 Note that `EXSLT node-set <http://www.exslt.org/exsl/functions/node-set/>`__ 
 support is required, so this stylesheet will not work natively in some browsers. Try 
 `Saxon <http://saxon.sourceforge.net/>`__ or 

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Amazon E-Commerce</title><style type="text/css">
+                    body {
+                        font-family: sans-serif;
+                        font-size: 0.85em;
+                        margin: 2em 8em;
+                    }
+                    .methods {
+                        background-color: #eef;
+                        padding: 1em;
+                    }
+                    h1 {
+                        font-size: 2.5em;
+                    }
+                    h2 {
+                        border-bottom: 1px solid black;
+                        margin-top: 1em;
+                        margin-bottom: 0.5em;
+                        font-size: 2em;
+                       }
+                    h3 {
+                        color: orange;
+                        font-size: 1.75em;
+                        margin-top: 1.25em;
+                        margin-bottom: 0em;
+                    }
+                    h4 {
+                        margin: 0em;
+                        padding: 0em;
+                        border-bottom: 2px solid white;
+                    }
+                    h6 {
+                        font-size: 1.1em;
+                        color: #99a;
+                        margin: 0.5em 0em 0.25em 0em;
+                    }
+                    dd {
+                        margin-left: 1em;
+                    }
+                    tt {
+                        font-size: 1.2em;
+                    }
+                    table {
+                        margin-bottom: 0.5em;
+                    }
+                    th {
+                        text-align: left;
+                        font-weight: normal;
+                        color: black;
+                        border-bottom: 1px solid black;
+                        padding: 3px 6px;
+                    }
+                    td {
+                        padding: 3px 6px;
+                        vertical-align: top;
+                        background-color: f6f6ff;
+                        font-size: 0.85em;
+                    }
+                    td p {
+                        margin: 0px;
+                    }
+                    ul {
+                        padding-left: 1.75em;
+                    }
+                    p + ul, p + ol, p + dl {
+                        margin-top: 0em;
+                    }
+                    .optional {
+                        font-weight: normal;
+                        opacity: 0.75;
+                    }
+                </style></head><body><h1>Amazon E-Commerce</h1><ul><li><a href="#resources">Resources</a><ul><li><a href="#idp4192">http://webservices.amazon.com/onca/xml</a></li></ul></li><li><a href="#representations">Representations</a><ul><li><a href="#idp43488">text/xml (<abbr title="{http://webservices.amazon.com/AWSECommerceService/2011-08-01} ItemSearchResponse">aws:ItemSearchResponse</abbr>)</a></li></ul></li></ul><h2 id="resources">Resources</h2><div class="resource"><h3 id="idp4192">/xml<span class="optional">?Service</span><span class="optional">&amp;Version</span><span class="optional">&amp;Operation</span>&amp;SubscriptionId&amp;SearchIndex&amp;Keywords<span class="optional">&amp;ResponseGroup</span></h3><h6>Methods</h6><div class="methods"><div class="method"><h4 id="http://webservices.amazon.com/onca#ItemSearch">GET</h4><h6>request query parameters</h6><table><tr><th>parameter</th><th>value</th><th>description</th></tr><tr><td><p><strong>Service</strong></p></td><td><p><em><a href="" title=""></a></em></p><p>Fixed: <tt>AWSECommerceService</tt></p></td><td></td></tr><tr><td><p><strong>Version</strong></p></td><td><p><em><a href="" title=""></a></em></p><p>Fixed: <tt>2005-07-26</tt></p></td><td></td></tr><tr><td><p><strong>Operation</strong></p></td><td><p><em><a href="" title=""></a></em></p><p>Fixed: <tt>ItemSearch</tt></p></td><td></td></tr><tr><td><p><strong>SubscriptionId</strong></p></td><td><p><em><a href="http://www.w3.org/TR/xmlschema-2/#string">string</a></em><small> (required)</small></p></td><td></td></tr><tr><td><p><strong>SearchIndex</strong></p></td><td><p><em><a href="" title="">SearchIndexType</a></em><small> (required)</small></p><p><em>One of:</em></p><ul><li><tt>Books</tt></li><li><tt>DVD</tt></li><li><tt>Music</tt></li></ul></td><td></td></tr><tr><td><p><strong>Keywords</strong></p></td><td><p><em><a href="" title="">KeywordList</a></em><small> (required)</small></p></td><td></td></tr><tr><td><p><strong>ResponseGroup</strong></p></td><td><p><em><a href="" title="">ResponseGroupType</a></em><small> (repeating)</small></p><p><em>One of:</em></p><ul><li><tt>Small</tt></li><li><tt>Medium</tt></li><li><tt>Large</tt></li><li><tt>Images</tt></li></ul></td><td></td></tr></table><p><em>available response representations:</em></p><ul><li><a href="#idp43488">text/xml (<abbr title="{http://webservices.amazon.com/AWSECommerceService/2011-08-01} ItemSearchResponse">aws:ItemSearchResponse</abbr>)</a></li></ul></div></div></div><h2 id="representations">Representations</h2><h3 id="idp43488">text/xml (<abbr title="{http://webservices.amazon.com/AWSECommerceService/2011-08-01} ItemSearchResponse">aws:ItemSearchResponse</abbr>)</h3><div class="representation"><h6>XML Schema</h6><p><em>Source: <a href="http://webservices.amazon.com/AWSECommerceService/AWSECommerceService.xsd">http://webservices.amazon.com/AWSECommerceService/AWSECommerceService.xsd</a></em></p><pre>&lt;xs:element name="ItemSearchResponse"&gt;
+		&lt;xs:complexType&gt;
+			&lt;xs:sequence&gt;
+				&lt;xs:element ref="tns:OperationRequest" minOccurs="0"/&gt;
+				&lt;xs:element ref="tns:Items" minOccurs="0" maxOccurs="unbounded"/&gt;
+			&lt;/xs:sequence&gt;
+		&lt;/xs:complexType&gt;
+	&lt;/xs:element&gt;</pre></div></body></html>

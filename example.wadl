@@ -1,0 +1,46 @@
+<application xmlns="http://research.sun.com/wadl/2006/10" 
+  xmlns:aws="http://webservices.amazon.com/AWSECommerceService/2011-08-01" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+
+  <doc title="Amazon E-Commerce"/>
+  <grammars> 
+    <include href="http://webservices.amazon.com/AWSECommerceService/AWSECommerceService.xsd"/> 
+  </grammars> 
+
+  <resources base="http://webservices.amazon.com/onca/"> 
+    <resource path="xml"> 
+      <method href="#ItemSearch"/> 
+    </resource> 
+  </resources> 
+
+  <method name="GET" id="ItemSearch"> 
+    <request> 
+      <param name="Service" style="query" 
+        fixed="AWSECommerceService"/> 
+      <param name="Version" style="query" fixed="2005-07-26"/> 
+      <param name="Operation" style="query" fixed="ItemSearch"/> 
+      <param name="SubscriptionId" style="query" 
+         type="xsd:string" required="true"/> 
+      <param name="SearchIndex" style="query" 
+         type="aws:SearchIndexType" required="true"> 
+         <option value="Books"/> 
+         <option value="DVD"/> 
+         <option value="Music"/> 
+      </param> 
+      <param name="Keywords" style="query" 
+        type="aws:KeywordList" required="true"/> 
+      <param name="ResponseGroup" style="query" 
+        type="aws:ResponseGroupType" repeating="true"> 
+         <option value="Small"/> 
+         <option value="Medium"/> 
+         <option value="Large"/> 
+         <option value="Images"/> 
+      </param> 
+    </request> 
+    <response> 
+      <representation mediaType="text/xml" 
+        element="aws:ItemSearchResponse"/> 
+    </response> 
+  </method> 
+</application>

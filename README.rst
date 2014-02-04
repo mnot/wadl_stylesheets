@@ -19,6 +19,9 @@ support is required, so this stylesheet will not work natively in some browsers.
 `Saxon <http://saxon.sourceforge.net/>`__ or 
 `xsltproc <http://xmlsoft.org/XSLT/xsltproc.html>`__.
 
+wadl-links.xsl is an XSL stylesheet that will generate an HTML5 document containing
+links which can be used to query the service defined by a WADL file.
+
 uri.xsd is a library of XML type restrictions that correspond to different 
 components of a URI, so they can be accurately described (e.g., in a WADL param element).
 

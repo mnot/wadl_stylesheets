@@ -286,6 +286,13 @@
                         opacity: 0.75;
                     }
                 </style>
+                <script type="text/javascript">
+                    window.onload = function() {
+                        if (location.hash){
+                            location = location.hash;
+                        }
+                    }
+                </script>                
             </head>
             <body>
                 <h1>
